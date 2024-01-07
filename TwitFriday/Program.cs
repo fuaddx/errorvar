@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Twitter.Core.Entities;
 using Twitter.Business.ExternalServices;
 using Microsoft.AspNetCore.Authentication.OAuth;
+using Twitter.Business.Helpers;
 namespace TwitFriday
 {
     public class Program
@@ -24,6 +25,7 @@ namespace TwitFriday
             builder.Services.AddIdentity<AppUser,IdentityRole>(options =>
             {
                 // Password settings.
+                options.SignIn.RequireConfirmedEmail = true;
                 options.Password.RequireDigit = true;
                 options.Password.RequireLowercase = true;
                 options.Password.RequireNonAlphanumeric = true;
@@ -66,6 +68,7 @@ namespace TwitFriday
             app.UseAuthorization();
             app.MapControllers();
 
+            PathConstants.RootPath = builder.Environment.WebRootPath;
             app.Run();
         }
     }

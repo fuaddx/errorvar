@@ -32,3 +32,4 @@ C:\Users\ASUS\Desktop\Friday\Twitter.Business\obj\Debug\net8.0\Twitter.Business.
 C:\Users\ASUS\Desktop\Friday\Twitter.Business\obj\Debug\net8.0\refint\Twitter.Business.dll
 C:\Users\ASUS\Desktop\Friday\Twitter.Business\obj\Debug\net8.0\Twitter.Business.pdb
 C:\Users\ASUS\Desktop\Friday\Twitter.Business\obj\Debug\net8.0\ref\Twitter.Business.dll
+C:\Users\ASUS\Desktop\Friday\Twitter.Business\obj\Debug\net8.0\Twitter.Business.sourcelink.json

@@ -294,3 +294,4 @@ C:\Users\ASUS\Desktop\Friday\TwitFriday\obj\Debug\net8.0\refint\TwitFriday.dll
 C:\Users\ASUS\Desktop\Friday\TwitFriday\obj\Debug\net8.0\TwitFriday.pdb
 C:\Users\ASUS\Desktop\Friday\TwitFriday\obj\Debug\net8.0\TwitFriday.genruntimeconfig.cache
 C:\Users\ASUS\Desktop\Friday\TwitFriday\obj\Debug\net8.0\ref\TwitFriday.dll
+C:\Users\ASUS\Desktop\Friday\TwitFriday\obj\Debug\net8.0\TwitFriday.sourcelink.json

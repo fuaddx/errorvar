@@ -23,7 +23,7 @@ namespace Twitter.Business.Dtos.AuthsDtos
                 .MinimumLength(2)
                 .MaximumLength(32);
             RuleFor(x => x.Surname).NotEmpty()
-                .MinimumLength(5)
+                .MinimumLength(3)
                 .MaximumLength(35);
             RuleFor(x => x.Username).NotEmpty()
                 .NotNull()

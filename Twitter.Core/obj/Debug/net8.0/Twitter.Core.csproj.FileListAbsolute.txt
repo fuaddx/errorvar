@@ -22,3 +22,4 @@ C:\Users\ASUS\Desktop\Friday\Twitter.Core\obj\Debug\net8.0\Twitter.Core.dll
 C:\Users\ASUS\Desktop\Friday\Twitter.Core\obj\Debug\net8.0\refint\Twitter.Core.dll
 C:\Users\ASUS\Desktop\Friday\Twitter.Core\obj\Debug\net8.0\Twitter.Core.pdb
 C:\Users\ASUS\Desktop\Friday\Twitter.Core\obj\Debug\net8.0\ref\Twitter.Core.dll
+C:\Users\ASUS\Desktop\Friday\Twitter.Core\obj\Debug\net8.0\Twitter.Core.sourcelink.json

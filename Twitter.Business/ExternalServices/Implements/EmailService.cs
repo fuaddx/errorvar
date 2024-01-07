@@ -27,7 +27,7 @@ namespace Twitter.Business.ExternalServices.Implements
                 smtpClient.Credentials = new NetworkCredential(_configuration["Email:Username"],
                     _configuration["Email:Password"]);
 
-                MailAddress from = new MailAddress(_configuration["Email:Username"], "Pustok support");
+                MailAddress from = new MailAddress(_configuration["Email:Username"], "Hello");
                 MailAddress to = new MailAddress(toMail);
                 MailMessage message = new MailMessage(from, to);
                 message.Body = body;

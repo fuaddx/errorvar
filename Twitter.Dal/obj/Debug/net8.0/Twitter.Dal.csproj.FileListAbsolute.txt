@@ -32,3 +32,4 @@ C:\Users\ASUS\Desktop\Friday\Twitter.Dal\obj\Debug\net8.0\refint\Twitter.Dal.dll
 C:\Users\ASUS\Desktop\Friday\Twitter.Dal\obj\Debug\net8.0\Twitter.Dal.pdb
 C:\Users\ASUS\Desktop\Friday\Twitter.Dal\obj\Debug\net8.0\Twitter.Dal.genruntimeconfig.cache
 C:\Users\ASUS\Desktop\Friday\Twitter.Dal\obj\Debug\net8.0\ref\Twitter.Dal.dll
+C:\Users\ASUS\Desktop\Friday\Twitter.Dal\obj\Debug\net8.0\Twitter.Dal.sourcelink.json
