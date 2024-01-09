@@ -164,9 +164,7 @@ namespace Twitter.Dal.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("BirthDay")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 1, 7, 0, 41, 52, 159, DateTimeKind.Local).AddTicks(4128));
+                        .HasColumnType("date");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -256,7 +254,7 @@ namespace Twitter.Dal.Migrations
                     b.Property<DateTime>("CreatedTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 1, 6, 20, 41, 52, 159, DateTimeKind.Utc).AddTicks(6272));
+                        .HasDefaultValue(new DateTime(2024, 1, 8, 8, 37, 22, 97, DateTimeKind.Utc).AddTicks(3819));
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -270,9 +268,6 @@ namespace Twitter.Dal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasDefaultValue(0);
-
-                    b.Property<DateTime>("UpdatedTime")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -343,7 +338,7 @@ namespace Twitter.Dal.Migrations
                     b.Property<DateTime>("CreatedTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 1, 7, 0, 41, 52, 160, DateTimeKind.Local).AddTicks(2056));
+                        .HasDefaultValue(new DateTime(2024, 1, 8, 12, 37, 22, 97, DateTimeKind.Local).AddTicks(9812));
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");

@@ -18,7 +18,7 @@ namespace Twitter.Dal.Configurations
             builder.Property(x=>x.Surname).IsRequired()
                 .HasMaxLength(40);
             builder.Property(x => x.BirthDay).IsRequired()
-                .HasDefaultValue(DateTime.Now);
+                .HasColumnType("date");
         }
     }
 }

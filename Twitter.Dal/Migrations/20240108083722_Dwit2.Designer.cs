@@ -12,8 +12,8 @@ using Twitter.Dal.Contexts;
 namespace Twitter.Dal.Migrations
 {
     [DbContext(typeof(TwitterContext))]
-    [Migration("20240106202103_NewTables")]
-    partial class NewTables
+    [Migration("20240108083722_Dwit2")]
+    partial class Dwit2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -167,9 +167,7 @@ namespace Twitter.Dal.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("BirthDay")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 1, 7, 0, 21, 2, 711, DateTimeKind.Local).AddTicks(1418));
+                        .HasColumnType("date");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -259,7 +257,7 @@ namespace Twitter.Dal.Migrations
                     b.Property<DateTime>("CreatedTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 1, 6, 20, 21, 2, 711, DateTimeKind.Utc).AddTicks(4049));
+                        .HasDefaultValue(new DateTime(2024, 1, 8, 8, 37, 22, 97, DateTimeKind.Utc).AddTicks(3819));
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -273,9 +271,6 @@ namespace Twitter.Dal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasDefaultValue(0);
-
-                    b.Property<DateTime>("UpdatedTime")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -346,7 +341,7 @@ namespace Twitter.Dal.Migrations
                     b.Property<DateTime>("CreatedTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 1, 7, 0, 21, 2, 712, DateTimeKind.Local).AddTicks(1303));
+                        .HasDefaultValue(new DateTime(2024, 1, 8, 12, 37, 22, 97, DateTimeKind.Local).AddTicks(9812));
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");

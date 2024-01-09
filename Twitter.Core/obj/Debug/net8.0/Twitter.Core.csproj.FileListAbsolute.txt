@@ -23,3 +23,16 @@ C:\Users\ASUS\Desktop\Friday\Twitter.Core\obj\Debug\net8.0\refint\Twitter.Core.d
 C:\Users\ASUS\Desktop\Friday\Twitter.Core\obj\Debug\net8.0\Twitter.Core.pdb
 C:\Users\ASUS\Desktop\Friday\Twitter.Core\obj\Debug\net8.0\ref\Twitter.Core.dll
 C:\Users\ASUS\Desktop\Friday\Twitter.Core\obj\Debug\net8.0\Twitter.Core.sourcelink.json
+C:\Users\Birinci\Desktop\ApisHomeTask\Twitter.Core\bin\Debug\net8.0\Twitter.Core.deps.json
+C:\Users\Birinci\Desktop\ApisHomeTask\Twitter.Core\bin\Debug\net8.0\Twitter.Core.dll
+C:\Users\Birinci\Desktop\ApisHomeTask\Twitter.Core\bin\Debug\net8.0\Twitter.Core.pdb
+C:\Users\Birinci\Desktop\ApisHomeTask\Twitter.Core\obj\Debug\net8.0\Twitter.Core.csproj.AssemblyReference.cache
+C:\Users\Birinci\Desktop\ApisHomeTask\Twitter.Core\obj\Debug\net8.0\Twitter.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Birinci\Desktop\ApisHomeTask\Twitter.Core\obj\Debug\net8.0\Twitter.Core.AssemblyInfoInputs.cache
+C:\Users\Birinci\Desktop\ApisHomeTask\Twitter.Core\obj\Debug\net8.0\Twitter.Core.AssemblyInfo.cs
+C:\Users\Birinci\Desktop\ApisHomeTask\Twitter.Core\obj\Debug\net8.0\Twitter.Core.csproj.CoreCompileInputs.cache
+C:\Users\Birinci\Desktop\ApisHomeTask\Twitter.Core\obj\Debug\net8.0\Twitter.Core.sourcelink.json
+C:\Users\Birinci\Desktop\ApisHomeTask\Twitter.Core\obj\Debug\net8.0\Twitter.Core.dll
+C:\Users\Birinci\Desktop\ApisHomeTask\Twitter.Core\obj\Debug\net8.0\refint\Twitter.Core.dll
+C:\Users\Birinci\Desktop\ApisHomeTask\Twitter.Core\obj\Debug\net8.0\Twitter.Core.pdb
+C:\Users\Birinci\Desktop\ApisHomeTask\Twitter.Core\obj\Debug\net8.0\ref\Twitter.Core.dll

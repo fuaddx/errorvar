@@ -31,12 +31,11 @@ namespace Twitter.Business.Dtos.AuthsDtos
                 .MaximumLength(35);
             RuleFor(x => x.Password).NotEmpty()
                 .NotNull()
-                .Matches(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$")
+                .Matches(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}")
                 .WithMessage("Password must contain at least 8 characters");
             RuleFor(x => x.Email).NotEmpty()
                 .NotNull()
                 .EmailAddress()
-                .Must(email => email.EndsWith("@gmail.com"))
                 .WithMessage("Email address must be a Gmail address");
             RuleFor(x => x.BirthDay).NotEmpty()
                 .Must(birthday => birthday <= DateTime.UtcNow)

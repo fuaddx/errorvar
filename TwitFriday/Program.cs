@@ -7,6 +7,10 @@ using Twitter.Core.Entities;
 using Twitter.Business.ExternalServices;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using Twitter.Business.Helpers;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.OpenApi.Models;
 namespace TwitFriday
 {
     public class Program
@@ -21,22 +25,8 @@ namespace TwitFriday
             {
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("MSSql"));
             });
-
-            builder.Services.AddIdentity<AppUser,IdentityRole>(options =>
-            {
-                // Password settings.
-                options.SignIn.RequireConfirmedEmail = true;
-                options.Password.RequireDigit = true;
-                options.Password.RequireLowercase = true;
-                options.Password.RequireNonAlphanumeric = true;
-                options.Password.RequireUppercase = false;
-                options.Password.RequiredLength = 6;
-                options.Password.RequiredUniqueChars = 4;
-                // User settings.
-                options.User.AllowedUserNameCharacters =
-                "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-                options.User.RequireUniqueEmail = false;
-            }).AddDefaultTokenProviders().AddEntityFrameworkStores<TwitterContext>();
+            //AddIdentity
+            builder.Services.AddUserIdentity();
             //Repositories Topic
             builder.Services.AddRepositories();
             //Services Topic
@@ -51,17 +41,62 @@ namespace TwitFriday
             builder.Services.AddBlogBusinessLayer();
             //AddEmail
             builder.Services.AddEmail();
+
+           
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(opt =>
+            {
+                opt.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" });
+                opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Please enter token",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    BearerFormat = "JWT",
+                    Scheme = "bearer"
+                });
 
+                opt.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            new string[]{}
+        }
+    });
+            });
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+            {
+                opt.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = builder.Configuration.GetSection("Jwt")["Issuer"],
+                    ValidAudience = builder.Configuration.GetSection("Jwt")["Audience"],
+                    IssuerSigningKey= new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("Jwt")["Key"])),
+                    LifetimeValidator = (nb,exp,token,_)=>token!= null ? exp>= DateTime.UtcNow && nb <= DateTime.UtcNow : false,
+                };
+            });
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(c =>
+                {
+                    c.ConfigObject.AdditionalItems.Add("persistAuthorization", "true");
+                });
             }
 
             app.UseAuthentication();

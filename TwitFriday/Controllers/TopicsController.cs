@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Twitter.Business.Dtos.TopicDtos;
 using Twitter.Business.Exceptions.Topic;
@@ -39,6 +40,7 @@ namespace TwitFriday.Controllers
         {
             _service = service;
         }
+        [Authorize(AuthenticationSchemes ="Bearer")]
         [HttpGet]
         public IActionResult Get()
         {

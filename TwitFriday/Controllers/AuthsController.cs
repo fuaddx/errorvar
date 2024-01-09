@@ -8,6 +8,7 @@ using Twitter.Business.Dtos.AuthsDtos;
 using Twitter.Business.Dtos.EmailDtos;
 using Twitter.Business.ExternalServices.Interfaces;
 using Twitter.Business.Helpers;
+using Twitter.Business.Services.Interfaces;
 using Twitter.Core.Entities;
 
 
@@ -18,16 +19,18 @@ namespace TwitFriday.Controllers
     public class AuthsController : ControllerBase
     {
         IEmailService _emailService;
+        IAuthService _service;
         SignInManager<AppUser> _signInManager { get; }
         UserManager<AppUser> _userManager {  get; }
         RoleManager<IdentityRole> _roleManager { get; }
 
-        public AuthsController(IEmailService emailService, SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager)
+        public AuthsController(IEmailService emailService, SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager, IAuthService service)
         {
             _emailService = emailService;
             _signInManager = signInManager;
             _userManager = userManager;
             _roleManager = roleManager;
+            _service = service;
         }
 
         private async Task _sendConfirmation(AppUser user)
@@ -62,7 +65,6 @@ namespace TwitFriday.Controllers
             {
                 await _sendConfirmation(user);
                 return Ok("Email Sent!");
-
             }
             else
             {
@@ -71,32 +73,9 @@ namespace TwitFriday.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> Login(LoginDto vm)
+        public async Task<IActionResult> Login(LoginDto dto)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            AppUser user;
-            if (vm.UserNameorEmail.Contains("@"))
-            {
-                user = await _userManager.FindByEmailAsync(vm.UserNameorEmail);
-            }
-            else
-            {
-                user = await _userManager.FindByNameAsync(vm.UserNameorEmail);
-            }
-            if (user == null)
-            {
-                return BadRequest("Invalid username or email");
-            }
-            //Check Password part
-            var result = await _signInManager.CheckPasswordSignInAsync(user, vm.Password, true);
-            if (!result.Succeeded)
-            {
-                return BadRequest("Invalid password");
-            }
-             return Ok("Login successful");
+            return Ok(await _service.Login(dto)); 
 
         }
 

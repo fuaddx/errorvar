@@ -13,6 +13,5 @@ namespace Twitter.Core.Entities
         public string Surname { get; set; }
         public DateTime BirthDay { get; set; }
 
-
     }
 }

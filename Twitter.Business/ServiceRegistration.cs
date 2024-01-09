@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Twitter.Business.Dtos.TopicDtos;
+using Twitter.Business.ExternalServices.Implements;
+using Twitter.Business.ExternalServices.Interfaces;
 using Twitter.Business.Profiles;
 using Twitter.Business.Repositories.Implements;
 using Twitter.Business.Repositories.Interfaces;
@@ -34,6 +36,8 @@ namespace Twitter.Business
         public static IServiceCollection AddBlogServices(this IServiceCollection services)
         {
             services.AddScoped<IBlogService, BlogService>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<ITokenService, TokenService>();
             return services;
         }
         public static IServiceCollection AddBlogBusinessLayer(this IServiceCollection services)

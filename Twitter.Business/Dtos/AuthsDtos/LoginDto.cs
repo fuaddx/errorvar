@@ -20,21 +20,12 @@ namespace Twitter.Business.Dtos.AuthsDtos
 
             RuleFor(x => x.UserNameorEmail).NotEmpty()
                 .NotNull()
-                .WithMessage("Please enter our username or email.")
-                .Must(value => IsValidEmail(value) || IsValidUserName(value));
+                .MinimumLength(3)
+                .MaximumLength(64);
             RuleFor(x => x.Password).NotEmpty()
-                .WithMessage("Please enter your Password")
-                .MinimumLength(8).WithMessage("Password must be at least 8 characters long")
-                .MaximumLength(20).WithMessage("Password cannot exceed 20 characters");
-
-        }
-        private bool IsValidEmail(string value)
-        {
-            return new EmailAddressAttribute().IsValid(value);
-        }
-        private bool IsValidUserName(string value)
-        {
-            return  !string.IsNullOrEmpty(value) && value.Length>=5 && value.Length<=20;
+                .NotNull()
+                .MinimumLength(6)
+                .MaximumLength(64);
         }
     }
 }

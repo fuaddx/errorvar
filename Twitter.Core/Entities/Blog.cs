@@ -14,7 +14,7 @@ namespace Twitter.Core.Entities
         public string Content { get; set; }
 
         public string Author { get; set; }
-
+        [NotMapped]
         public DateTime UpdatedTime { get; set; }
 
         [NotMapped]

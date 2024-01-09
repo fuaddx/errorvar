@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Desktop\\Friday\\TwitFriday\\TwitFriday.csproj": {}
+    "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\TwitFriday\\TwitFriday.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Desktop\\Friday\\TwitFriday\\TwitFriday.csproj": {
+    "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\TwitFriday\\TwitFriday.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Friday\\TwitFriday\\TwitFriday.csproj",
+        "projectUniqueName": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\TwitFriday\\TwitFriday.csproj",
         "projectName": "TwitFriday",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\Friday\\TwitFriday\\TwitFriday.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\Friday\\TwitFriday\\obj\\",
+        "projectPath": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\TwitFriday\\TwitFriday.csproj",
+        "packagesPath": "C:\\Users\\Birinci\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\TwitFriday\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Birinci\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Business\\Twitter.Business.csproj": {
-                "projectPath": "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Business\\Twitter.Business.csproj"
+              "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Business\\Twitter.Business.csproj": {
+                "projectPath": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Business\\Twitter.Business.csproj"
               }
             }
           }
@@ -44,6 +44,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -86,17 +90,17 @@
         }
       }
     },
-    "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Business\\Twitter.Business.csproj": {
+    "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Business\\Twitter.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Business\\Twitter.Business.csproj",
+        "projectUniqueName": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Business\\Twitter.Business.csproj",
         "projectName": "Twitter.Business",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Business\\Twitter.Business.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Business\\obj\\",
+        "projectPath": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Business\\Twitter.Business.csproj",
+        "packagesPath": "C:\\Users\\Birinci\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Birinci\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -110,8 +114,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Dal\\Twitter.Dal.csproj": {
-                "projectPath": "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Dal\\Twitter.Dal.csproj"
+              "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Dal\\Twitter.Dal.csproj": {
+                "projectPath": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Dal\\Twitter.Dal.csproj"
               }
             }
           }
@@ -159,17 +163,17 @@
         }
       }
     },
-    "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Core\\Twitter.Core.csproj": {
+    "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Core\\Twitter.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Core\\Twitter.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Core\\Twitter.Core.csproj",
         "projectName": "Twitter.Core",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Core\\Twitter.Core.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Core\\obj\\",
+        "projectPath": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Core\\Twitter.Core.csproj",
+        "packagesPath": "C:\\Users\\Birinci\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Birinci\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -220,17 +224,17 @@
         }
       }
     },
-    "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Dal\\Twitter.Dal.csproj": {
+    "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Dal\\Twitter.Dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Dal\\Twitter.Dal.csproj",
+        "projectUniqueName": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Dal\\Twitter.Dal.csproj",
         "projectName": "Twitter.Dal",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Dal\\Twitter.Dal.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Dal\\obj\\",
+        "projectPath": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Dal\\Twitter.Dal.csproj",
+        "packagesPath": "C:\\Users\\Birinci\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Dal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Birinci\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -244,8 +248,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Core\\Twitter.Core.csproj": {
-                "projectPath": "C:\\Users\\ASUS\\Desktop\\Friday\\Twitter.Core\\Twitter.Core.csproj"
+              "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Core\\Twitter.Core.csproj": {
+                "projectPath": "C:\\Users\\Birinci\\Desktop\\ApisHomeTask\\Twitter.Core\\Twitter.Core.csproj"
               }
             }
           }
