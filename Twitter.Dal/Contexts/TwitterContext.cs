@@ -14,7 +14,7 @@ using Twitter.Core.Entity.Common;
 
 namespace Twitter.Dal.Contexts
 {
-    public class TwitterContext : IdentityDbContext<AppUser>
+    public class TwitterContext : IdentityDbContext
     {
         public TwitterContext(DbContextOptions options) : base(options)
         {

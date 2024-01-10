@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using Twitter.Core.Enums;
+using Twitter.Business.Exceptions.User;
 namespace TwitFriday
 {
     public class Program
@@ -58,8 +60,8 @@ namespace TwitFriday
                     Scheme = "bearer"
                 });
 
-                opt.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
+                    opt.AddSecurityRequirement(new OpenApiSecurityRequirement
+         {
         {
             new OpenApiSecurityScheme
             {
@@ -71,7 +73,7 @@ namespace TwitFriday
             },
             new string[]{}
         }
-    });
+         });
             });
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
             {
@@ -98,7 +100,52 @@ namespace TwitFriday
                     c.ConfigObject.AdditionalItems.Add("persistAuthorization", "true");
                 });
             }
+            app.UseHttpsRedirection();
+            app.Use(async (context,next) =>
+            {
+                using (var scope = context.RequestServices.CreateScope())
+                {
+                    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+                    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+                    if(!await roleManager.Roles.AnyAsync())
+                    {
+                        foreach (var role in Enum.GetNames(typeof(Roles)))
+                        {
+                            var result= await roleManager.CreateAsync(new IdentityRole(role));
+                            if (!result.Succeeded)
+                            {
+                                StringBuilder stringBuilder = new StringBuilder();
+                                foreach (var error in result.Errors)
+                                {
+                                    stringBuilder.Append(error.Description + " ");
+                                }
+                                throw new Exception(stringBuilder.ToString().TrimEnd());
+                            }
+                        }
+                    }
+                    if (await userManager.FindByNameAsync(app.Configuration.GetSection("Admin")?["Username"]) == null)
+                    {
+                        var user = new AppUser
+                        {
+                            UserName = app.Configuration.GetSection("Admin")["Username"],
+                            Email = app.Configuration.GetSection("Admin")["Username"]
+                        };
+                        var result = await userManager.CreateAsync(user, app.Configuration.GetSection("Admin")["Password"]);
+                        if (!result.Succeeded)
+                        {
+                            StringBuilder stringBuilder = new StringBuilder();
+                            foreach (var error in result.Errors)
+                            {
+                                stringBuilder.Append(error.Description + " ");
+                            }
+                            throw new AppUserCreatedFailedException(stringBuilder.ToString().TrimEnd());
+                        }
+                        await userManager.AddToRoleAsync(user, nameof(Roles.Admin));
+                    }
 
+                }
+                await next();
+            });
             app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();

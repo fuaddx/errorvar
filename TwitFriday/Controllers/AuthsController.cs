@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
-using Pustok2.Helpers;
 using Twitter.Business.Dtos.AuthsDtos;
 using Twitter.Business.Dtos.EmailDtos;
 using Twitter.Business.ExternalServices.Interfaces;
 using Twitter.Business.Helpers;
 using Twitter.Business.Services.Interfaces;
 using Twitter.Core.Entities;
+using Twitter.Core.Enums;
 
 
 namespace TwitFriday.Controllers
@@ -22,14 +22,14 @@ namespace TwitFriday.Controllers
         IAuthService _service;
         SignInManager<AppUser> _signInManager { get; }
         UserManager<AppUser> _userManager {  get; }
-        RoleManager<IdentityRole> _roleManager { get; }
+       /* RoleManager<IdentityRole> _roleManager { get; }*/
 
-        public AuthsController(IEmailService emailService, SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager, IAuthService service)
+        public AuthsController(IEmailService emailService, SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, IAuthService service)
         {
             _emailService = emailService;
             _signInManager = signInManager;
             _userManager = userManager;
-            _roleManager = roleManager;
+            /*_roleManager = roleManager;*/
             _service = service;
         }
 
@@ -79,7 +79,7 @@ namespace TwitFriday.Controllers
 
         }
 
-        [HttpPost("Roles")]
+        /*[HttpPost("Roles")]
         public async Task<bool> CreateRoles()
         {
             foreach (var item in Enum.GetValues(typeof(Roles)))
@@ -97,6 +97,6 @@ namespace TwitFriday.Controllers
                 }
             }
             return true;
-        }
+        }*/
     }
 }
